@@ -3,7 +3,7 @@
 This module implements the fix from https://github.com/magento/magento2/pull/14346 and is meant to be used with Magento 
 2.2.x
 
-[![Build Status](https://travis-ci.org/SemExpert/SemExpert_FixSalesDecimals.svg?branch=master)](https://travis-ci.org//SemExpert/SemExpert_FixSalesDecimals)
+[![Build Status](https://travis-ci.com/SemExpert/SemExpert_FixSalesDecimals.svg?branch=master)](https://travis-ci.org//SemExpert/SemExpert_FixSalesDecimals)
 
 ## References
 
