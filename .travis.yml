@@ -36,7 +36,7 @@ env:
 matrix:
   exclude:
     - php: 7.0
-      env: MAGENTO_VERSION=2.2 TEST_SUITE=spec
+      env: MAGENTO_VERSION=2.2 TEST_SUITE=static
     - php: 7.0
       env: MAGENTO_VERSION=2.2 TEST_SUITE=js GRUNT_COMMAND=spec
     - php: 7.0
