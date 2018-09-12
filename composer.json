@@ -1,6 +1,7 @@
 {
   "name": "semexpert/module-fix-sales-decimals",
   "description": "Backports fixes from Magento 2.3 to the decimal qty handling in sales module.",
+  "version": "1.0.0",
   "require": {
     "php": "~7.0.13|~7.1.0"
   },
