@@ -73,4 +73,5 @@ script:
   - if [ $TEST_SUITE == "functional" ]; then dev/tests/functional/vendor/phpunit/phpunit/phpunit -c dev/tests/$TEST_SUITE $TEST_FILTER; fi
   - if [ $TEST_SUITE == "unit" ]; then phpunit -c dev/tests/$TEST_SUITE $TEST_FILTER vendor/$TARGET_MODULE/Test/Unit; fi
   - if [ $TEST_SUITE == "integration" ]; then phpunit -c dev/tests/$TEST_SUITE $TEST_FILTER; fi
+  - if [ $TEST_SUITE == "static" ]; then phpunit -c dev/tests/$TEST_SUITE $TEST_FILTER; fi
   - if [ $TEST_SUITE == "js" ]; then grunt $GRUNT_COMMAND; fi
