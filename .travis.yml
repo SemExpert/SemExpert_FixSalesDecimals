@@ -68,14 +68,15 @@ install:
   - composer config repositories.test_target git https://github.com/${TRAVIS_REPO_SLUG}.git
   - composer require $TARGET_MODULE dev-$BRANCH
 before_script:
+  # Enable integration tests for this module
+  - sed -i "s/<testsuites>/<testsuites><testsuite name=\"\"><directory suffix=\"Test.php\">..\/..\/..\/vendor\/$TARGET_MODULE\/Test\/Integration<\/directory><\/testsuite>/" dev/tests/integration/phpunit.xml.dist
+
   - bash ./dev/travis/before_script.sh
 
   # There is a dependency error in magento core so we need to skip DependencyTest
   - cp dev/tests/static/phpunit.xml.dist dev/tests/static/phpunit.xml
   - sed -i 's/\(<directory>testsuite\/Magento\/Test\/Integrity<\/directory>\)/\1<exclude>testsuite\/Magento\/Test\/Integrity\/DependencyTest.php<\/exclude>/' dev/tests/static/phpunit.xml
 
-  # Enable integration tests for this module
-  - sed -i 's/<testsuites>/<testsuites><testsuite name=""><directory suffix="Test.php">../../../vendor/$TARGET_MODULE/Test/Integration</directory></testsuite>/' dev/tests/integration/phpunit.xml
 script:
   # Set arguments for variants of phpunit based tests; '|| true' prevents failing script when leading test fails
   - test $TEST_SUITE = "functional" && TEST_FILTER='dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests.php' || true
