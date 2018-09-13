@@ -69,7 +69,7 @@ install:
   - composer require $TARGET_MODULE dev-$BRANCH
 before_script:
   # Enable integration tests for this module
-  - sed -i "s/<testsuites>/<testsuites><testsuite name=\"\"><directory suffix=\"Test.php\">..\/..\/..\/vendor\/$TARGET_MODULE\/Test\/Integration<\/directory><\/testsuite>/" dev/tests/integration/phpunit.xml.dist
+  - sed -i "s/<testsuites>/<testsuites><testsuite name=\"\"><directory suffix=\"Test.php\">..\/..\/..\/vendor\/semexpert\/module-fix-sales-decimals\/Test\/Integration<\/directory><\/testsuite>/" dev/tests/integration/phpunit.xml.dist
 
   - bash ./dev/travis/before_script.sh
 
