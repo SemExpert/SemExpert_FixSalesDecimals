@@ -1,6 +1,6 @@
 <?php
 
-namespace SemExpert\Test\Integration\Model\Order;
+namespace SemExpert\FixSalesDecimals\Test\Integration\Model\Order;
 
 use Magento\Framework\Serialize\Serializer\Json;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;

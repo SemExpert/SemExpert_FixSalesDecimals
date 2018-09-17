@@ -6,7 +6,7 @@
  * Time: 3:25 PM
  */
 
-namespace SemExpert\FixSalesDecimals\Unit;
+namespace SemExpert\FixSalesDecimals\Test\Unit;
 
 use PHPUnit\Framework\TestCase;
 
