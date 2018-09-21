@@ -1,0 +1,17 @@
+<config>
+    <!-- ... -->
+
+    <!--type name="Pulsestorm\TutorialPlugin\Model\Example">
+        <plugin name="pulsestorm_tutorial_plugin_model_example_plugin"
+                type="Pulsestorm\TutorialPlugin\Model\Example\Plugin"
+                sortOrder="10"
+                disabled="false"/>
+    </type-->
+
+    <type name="Magento\Sales\Model\Order\Item">
+        <plugin name="semexpert_fixsalesdecimals_plugin_orderitemplugin"
+                type="SemExpert\FixSalesDecimals\Plugin\OrderItemPlugin"
+                sortOrder="1"
+                disabled="false"/>
+    </type>
+</config>
