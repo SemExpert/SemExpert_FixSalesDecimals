@@ -1,13 +1,4 @@
-<config>
-    <!-- ... -->
-
-    <!--type name="Pulsestorm\TutorialPlugin\Model\Example">
-        <plugin name="pulsestorm_tutorial_plugin_model_example_plugin"
-                type="Pulsestorm\TutorialPlugin\Model\Example\Plugin"
-                sortOrder="10"
-                disabled="false"/>
-    </type-->
-
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Sales\Model\Order\Item">
         <plugin name="semexpert_fixsalesdecimals_plugin_orderitemplugin"
                 type="SemExpert\FixSalesDecimals\Plugin\OrderItemPlugin"
