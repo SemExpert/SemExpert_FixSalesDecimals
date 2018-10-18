@@ -15,11 +15,35 @@ use Magento\Sales\Model\Order\Item;
 
 class OrderItemPluginTest extends TestCase
 {
+    protected $model;
+    protected $objectManager;
+    protected $orderFactory;
+    protected $plugin;
+
+    public function setUp()
+    {
+        $this->objectManager = new ObjectManager($this);
+        $this->model = $this->objectManager->getObject(Item::class);
+        $this->plugin = new OrderItemPlugin();
+    }
+
     public function testSameValueOnIntegers()
     {
-        $plugin = new OrderItemPlugin();
-        $objectManager = new ObjectManager($this);
-        $model = $objectManager->getObject(Item::class);
-        $this->assertEquals(10, $plugin->afterGetQtyToInvoice($model, 10));
+        $this->assertEquals(10, $this->plugin->afterGetQtyToInvoice($this->model, 10));
+    }
+
+    public function testSameValueOnFloat()
+    {
+        $this->assertEquals(10.12345678, $this->plugin->afterGetQtyToInvoice($this->model, 10.12345678));
+    }
+
+    public function testSameValueFloatRoundedUp()
+    {
+        $this->assertEquals(10.12345679, $this->plugin->afterGetQtyToInvoice($this->model, 10.12345678611));
+    }
+
+    public function testSameValueFloatRoundedDown()
+    {
+        $this->assertEquals(10.12345678, $this->plugin->afterGetQtyToInvoice($this->model, 10.12345678111));
     }
 }
