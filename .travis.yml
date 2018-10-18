@@ -62,7 +62,7 @@ before_install:
 install:
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
   - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
-  - composer config name magento/project-travis
+  #- composer config name magento/project-travis
   - composer install --no-interaction --prefer-dist
   - composer config minimum-stability dev
   - composer config repositories.test_target git https://github.com/${TRAVIS_REPO_SLUG}.git
