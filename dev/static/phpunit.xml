@@ -22,9 +22,9 @@
         </testsuite>
         <testsuite name="Code Integrity Tests">
             <directory>testsuite/Magento/Test/Integrity</directory>
-            <exclude>testsuite\Magento\Test\Integrity\DependencyTest.php</exclude>
-            <exclude>testsuite\Magento\Test\Integrity\ComposerTest.php</exclude>
-            <exclude>testsuite\Magento\Test\Integrity\Di\CompilerTest.php</exclude>
+            <exclude>testsuite/Magento/Test/Integrity/DependencyTest.php</exclude>
+            <exclude>testsuite/Magento/Test/Integrity/ComposerTest.php</exclude>
+            <exclude>testsuite/Magento/Test/Integrity/Di/CompilerTest.php</exclude>
         </testsuite>
         <testsuite name="Xss Unsafe Output Test">
             <file>testsuite/Magento/Test/Php/XssPhtmlTemplateTest.php</file>
