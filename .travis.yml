@@ -77,6 +77,9 @@ before_script:
   - cp dev/tests/static/phpunit.xml.dist dev/tests/static/phpunit.xml
   - sed -i 's/\(<directory>testsuite\/Magento\/Test\/Integrity<\/directory>\)/\1<exclude>testsuite\/Magento\/Test\/Integrity\/DependencyTest.php<\/exclude>/' dev/tests/static/phpunit.xml
 
+  # ComposerTest only makes sense when developing Magento itself
+  - sed -i 's/\(<directory>testsuite\/Magento\/Test\/Integrity<\/directory>\)/\1<exclude>testsuite\/Magento\/Test\/Integrity\/ComposerTest.php<\/exclude>/' dev/tests/static/phpunit.xml
+
 script:
   # Set arguments for variants of phpunit based tests; '|| true' prevents failing script when leading test fails
   - test $TEST_SUITE = "functional" && TEST_FILTER='dev/tests/functional/testsuites/Magento/Mtf/TestSuite/InjectableTests.php' || true
