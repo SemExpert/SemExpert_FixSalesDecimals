@@ -73,12 +73,8 @@ before_script:
 
   - bash ./dev/travis/before_script.sh
 
-  # There is a dependency error in magento core so we need to skip DependencyTest
-  - cp dev/tests/static/phpunit.xml.dist dev/tests/static/phpunit.xml
-  - sed -i 's/\(<directory>testsuite\/Magento\/Test\/Integrity<\/directory>\)/\1<exclude>testsuite\/Magento\/Test\/Integrity\/DependencyTest.php<\/exclude>/' dev/tests/static/phpunit.xml
-
-  # ComposerTest only makes sense when developing Magento itself
-  - sed -i 's/\(<directory>testsuite\/Magento\/Test\/Integrity<\/directory>\)/\1<exclude>testsuite\/Magento\/Test\/Integrity\/ComposerTest.php<\/exclude>/' dev/tests/static/phpunit.xml
+  # Skipping several broken Magento tests
+  - cp ../dev/static/phpunit.xml dev/tests/static/phpunit.xml
 
 script:
   # Set arguments for variants of phpunit based tests; '|| true' prevents failing script when leading test fails
